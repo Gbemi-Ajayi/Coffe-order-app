@@ -1,5 +1,5 @@
 //import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity, Alert} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { theme } from "./theme";
 import {BrandOrder} from "./Components/BrandOrder"
 
@@ -10,8 +10,9 @@ export default function App() {
     
     <View style={styles.container}>
       <BrandOrder name="Coffee"/>  
-      <BrandOrder name="Tea"/>  
-      <BrandOrder name="Hot Chocolate"/>  
+      <BrandOrder name="Tea" isCompleted/>  
+      <BrandOrder name="Hot Chocolate" isCompleted/>  
+      <BrandOrder name="Iced Tea" isCompleted/>  
     </View>
   );
 }
@@ -21,30 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colorWhite,
     justifyContent: "center",
-  },
-  itemsText: {
-    fontSize: 20,
-    fontWeight: 200
-  },
-  itemsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderBottomWidth: 1.5,
-    borderBottomColor: colorCerulean
-  },
-  deleteBtn: {
-    marginHorizontal: 10,
-    padding: 8,
-    color: colorWhite,
-    backgroundColor: colorBlack,
-    textAlign: "center",
-    fontWeight: "bold",
-    borderRadius: 6,
-    letterSpacing: 1,
-    textTransform: "uppercase"
   }
  
 });

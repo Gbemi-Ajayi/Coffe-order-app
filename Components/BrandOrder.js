@@ -1,18 +1,19 @@
 
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from "react-native";
 import { theme } from "../theme";
-let { colorWhite, colorCerulean, colorBlack } = theme;
+let { colorWhite, colorCerulean } = theme;
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 
-const BrandOrder = ({ name }) => {
+const BrandOrder = ({ name, isCompleted = false }) => {
     
-    const handleDelete = ({name}) => {
+    const handleDelete = () => {
         Alert.alert(`Are you sure you want to delete ${name}?`, "It will be removed permanently", [
                   {
                     text: "Okay",
                     style: 'destructive',
-                    onPress: () => {Alert.alert('gone')}
+                onPress: () => { Alert.alert('gone')}
                   },
                   {
                     text: "Cancel",
@@ -24,10 +25,10 @@ const BrandOrder = ({ name }) => {
     
     return (
         
-        <View style={styles.itemsContainer}>
-            <Text style={styles.itemsText}> { name }</Text>
-                <TouchableOpacity onPress={handleDelete} activeOpacity={0.8}>
-                    <Text style={styles.deleteBtn}>Delete</Text>
+        <View style={[styles.itemsContainer, isCompleted ? styles.completedContainer: null]}>
+            <Text style={[styles.itemsText, isCompleted ? styles.completeTxt: null]}> { name }</Text>
+                <TouchableOpacity onPress={handleDelete} activeOpacity={0.8} style={[styles.deleteBtn, isCompleted ? styles.completeButton : null]}>
+                    <Text style={styles.deleteTxt}><AntDesign name="delete" size={22} color={isCompleted ? theme.colorGrey: theme.colorRed} /></Text>
               </TouchableOpacity>
               </View>
     )
@@ -35,11 +36,6 @@ const BrandOrder = ({ name }) => {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colorWhite,
-    justifyContent: "center",
-  },
   itemsText: {
     fontSize: 20,
     fontWeight: 200
@@ -52,19 +48,37 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 1.5,
     borderBottomColor: colorCerulean
-  },
-  deleteBtn: {
+    },
+    completedContainer: {
+        backgroundColor: theme.colorLightGrey,
+        borderBottomColor: theme.colorGrey,
+
+        
+    },
+    completeButton: {
+        color: theme.colorGrey,
+    },
+    completeTxt: {
+        textDecorationLine: "line-through",
+        textDecorationColor: theme.Grey,
+        color: theme.colorGrey
+    },
+    deleteBtn: {
     marginHorizontal: 10,
     padding: 8,
-    color: colorWhite,
-    backgroundColor: colorBlack,
+    //backgroundColor: colorBlack,
+    borderRadius: 6,
+   
+    },
+  deleteTxt: {
     textAlign: "center",
     fontWeight: "bold",
-    borderRadius: 6,
     letterSpacing: 1,
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    color: colorWhite,
+   
   }
  
 });
 
-export { BrandOrder}
+export {BrandOrder}
