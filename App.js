@@ -1,6 +1,7 @@
 //import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity, Alert} from "react-native";
 import { theme } from "./theme";
+import {BrandOrder} from "./Components/BrandOrder"
 
 let { colorWhite, colorCerulean, colorBlack} = theme;
 
@@ -8,23 +9,9 @@ export default function App() {
   return (
     
     <View style={styles.container}>
-      <View style={styles.itemsContainer}>
-        <Text style={styles.itemsText}> Coffee</Text>
-        <TouchableOpacity onPress={() => Alert.alert("Are you sure you want to delete this?", "It will be removed permanently", [
-          {
-            text: "Okay",
-            style: 'destructive',
-            onPress: () => {Alert.alert('gone')}
-          },
-          {
-            text: "Cancel",
-            style: "cancel"
-          }
-
-        ])} activeOpacity={0.8}>
-        <Text style={styles.deleteBtn}>Delete</Text>
-      </TouchableOpacity>
-      </View>
+      <BrandOrder name="Coffee"/>  
+      <BrandOrder name="Tea"/>  
+      <BrandOrder name="Hot Chocolate"/>  
     </View>
   );
 }
