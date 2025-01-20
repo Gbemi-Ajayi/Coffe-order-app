@@ -1,0 +1,32 @@
+
+{
+
+  "workbench.colorTheme": "Tomorrow Night Blue",
+  //"workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "explorer.openEditors.visible": 0,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#a840fd",
+    "titleBar.activeBackground": "#1d0118",
+    "panelTitle.activeForeground": "#3a1326",
+    "panel.background": "#ee57cd",
+    "tab.activeBackground": "#02664d",
+    "tab.activeBorder": "#d6f58d"
+  },
+  "breadcrumbs.enabled": false,
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": false,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "php.debug.executablePath": "c:/php/php.exe",
+  "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+}
